@@ -1,0 +1,5 @@
+{
+    "baseUrl": "localhost:5000",
+    "baseUrl1": "localhost:8002",
+    "baseUrl2": "173.255.116.184:8002"
+}
