@@ -1,7 +1,10 @@
 
 const { baseUrl } = require("./config.json");
-const { access_token } = require("./token.json");
+const tokens = require("./tokens.json");
 const WebSocket = require('ws');
+
+const username = process.argv[2] || "user1";
+const access_token = tokens[username];
 
 // hand shaking
 const websocket = new WebSocket(`ws://${baseUrl}/ws?access_token=` + access_token);
