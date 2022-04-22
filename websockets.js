@@ -4,12 +4,12 @@ const { baseUrl } = require("./config.json");
 const tokens = require("./tokens.json");
 
 const username = process.argv[2] || "user1";
-const socketRoute = process.argv[3] || "user1";
+const socketRoute = process.argv[3] || "ws-one";
 
 const access_token = tokens[username];
 
 // hand shaking
-const websocket = new WebSocket(`ws://${baseUrl}/ws?access_token=` + access_token);
+const websocket = new WebSocket(`ws://${baseUrl}/${socketRoute}?access_token=` + access_token);
 
 // on connected
 websocket.onopen = function (e) {
